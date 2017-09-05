@@ -1,0 +1,38 @@
+{
+  "name": "valyou",
+  "version": "1.0.0",
+  "description": "",
+  "authors": [
+    "Brandon Sara (http://bsara.pro)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bsara/valyou#readme",
+  "repository": "bsara/valyou",
+  "bugs": {
+    "url": "https://github.com/bsara/valyou/issues"
+  },
+  "keywords": [
+    "val",
+    "valu",
+    "value",
+    "valyou",
+    "get",
+    "getvalue",
+    "get-value"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "bump": "npm run bump:patch",
+    "bump:major": "npm --no-git-tag-version version major",
+    "bump:minor": "npm --no-git-tag-version version minor",
+    "bump:patch": "npm --no-git-tag-version version patch",
+    "postversion": "npx update-version-comment-refs && npx push-version-comment-refs",
+    "prepublishOnly": "git push && npx tag-version",
+    "postpublish": "npm run bump"
+  },
+  "devDependencies": {
+    "npm-scripts-versioning": "^1.0.0-beta.5"
+  }
+}
