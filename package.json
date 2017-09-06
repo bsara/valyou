@@ -1,6 +1,6 @@
 {
   "name": "valyou",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simply returns any value given, unless that value is a function, then that function is called with provided arguments and context.",
   "authors": [
     "Brandon Sara (http://bsara.pro)"
