@@ -2,9 +2,9 @@
 
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)][license]
 
-> JS module that resolves any given value if it is a function or returns the value given as is
-> *(this library is similar to [`lodash.result`](https://lodash.com/docs/#result) but you're
-> getting a variable or static value rather than an object property value)*.
+> Simply returns any value given, unless that value is a function, then that function is called
+> with provided arguments and context. *(this library is similar to [`lodash.result`](https://lodash.com/docs/#result)
+> but you're getting a static or variable value rather than an object property value)*.
 
 > **NOTE:** Compatible with ES4+ browsers, AMD, CommonJS, ES6 Imports, and HTML
 > script references.

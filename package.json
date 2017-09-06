@@ -1,7 +1,7 @@
 {
   "name": "valyou",
   "version": "1.0.2",
-  "description": "Resolves any given value if it is a function or returns the value given as is",
+  "description": "Simply returns any value given, unless that value is a function, then that function is called with provided arguments and context.",
   "authors": [
     "Brandon Sara (http://bsara.pro)"
   ],
