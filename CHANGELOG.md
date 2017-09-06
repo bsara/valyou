@@ -1,6 +1,6 @@
-# 1.0.3
+# 1.0.4
 
-- Fixed uglify issues
+- Removed ES6 remnants
 
 
 

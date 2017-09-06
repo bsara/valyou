@@ -35,7 +35,7 @@
    * @returns {*} `val` if `val` is NOT a `Function`; otherwise, returns the result of
    *              calling `val()` (without arguments).
    */
-  function valyou(val, ...args) {
+  return function valyou(val) {
     var args;
 
     if (arguments.length > 1) {
@@ -43,8 +43,6 @@
     }
 
     return ((typeof val === 'function') ? val.apply(this, args) : val);
-  }
-
-  return valyou;
+  };
 });
 
