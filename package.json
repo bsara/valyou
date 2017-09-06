@@ -1,6 +1,6 @@
 {
   "name": "valyou",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Resolves any given value if it is a function or returns the value given as is",
   "authors": [
     "Brandon Sara (http://bsara.pro)"
