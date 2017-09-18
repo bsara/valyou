@@ -20,9 +20,8 @@
     "getvalue",
     "get-value"
   ],
-  "files": [
-    "index.js"
-  ],
+  "main": "index.umd.js",
+  "module": "index.js",
   "scripts": {
     "bump": "npm run bump:patch",
     "bump:major": "npm --no-git-tag-version version major",

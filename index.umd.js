@@ -17,15 +17,32 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  */
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory);
+    return;
+  }
+  if (typeof exports === 'object') {
+    module.exports = factory();
+    return;
+  }
+  root.valyou = factory();
+})(this, function() {
+  /**
+   * @param {*}    val    - The value to be returned or the function to be called.
+   * @param {...*} [args] - Arguments to be passed to `val` if `val` is a function.
+   *
+   * @returns {*} `val` if `val` is NOT a `Function`; otherwise, returns the result of
+   *              calling `val()` (without arguments).
+   */
+  return function valyou(val) {
+    var args;
 
+    if (arguments.length > 1) {
+      args = Array.prototype.slice.call(arguments, 1);
+    }
 
-/**
- * @param {*}    val    - The value to be returned or the function to be called.
- * @param {...*} [args] - Arguments to be passed to `val` if `val` is a function.
- *
- * @returns {*} `val` if `val` is NOT a `Function`; otherwise, returns the result of
- *              calling `val()` (without arguments).
- */
-export default function valyou(val, ...args) {
-  return ((typeof val === 'function') ? val.call(this, ...args) : val);
-}
+    return ((typeof val === 'function') ? val.apply(this, args) : val);
+  };
+});
+
