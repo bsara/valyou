@@ -24,8 +24,25 @@
  * @param {...*} [args] - Arguments to be passed to `val` if `val` is a function.
  *
  * @returns {*} `val` if `val` is NOT a `Function`; otherwise, returns the result of
- *              calling `val()` (without arguments).
+ *              calling `val(...args)` using the context of `valyou` as the context
+ *              of `val`.
  */
 export default function valyou(val, ...args) {
   return ((typeof val === 'function') ? val.call(this, ...args) : val);
+}
+
+
+/**
+ * @param {*}    val    - The value to be returned or the function to be called.
+ * @param {...*} [args] - Arguments to be passed to `val` if `val` is a function.
+ *
+ * @returns {*} `val` if `val` is NOT a `Function`; otherwise, returns the result of
+ *              calling `val(...args)` using the context of `valyouNull` as the
+ *              context of `val`. If `val` is `undefined`, then `null` will be
+ *              returned.
+ */
+export function valyouNull(val, ...args) {
+  const ret = valyou.call(this, val, ...args);
+
+  return ((ret == null) ? null : ret);
 }

@@ -23,13 +23,15 @@ $ npm i --save valyou
 ## Usage
 
 ```js
-import valyou from 'valyou';
+import valyou, { valyouNull } from 'valyou';
 
 
 let val            = 42;
 let func           = function()    { return "Fish fingers and custard"; };
 let paramFunc      = function(num) { return (val + num); };
 let contextualFunc = function()    { return this.contextVal; };
+
+let undefVal = undefined;
 
 
 console.log(valyou(val));          // 42
@@ -41,6 +43,10 @@ console.log(valyou(paramFunc, 8)); // 50
   console.log(valyou.call(this, contextualFunc)); // 92188
 })();
 
+
+console.log(valyou(undefVal))     // undefined
+console.log(valyouNull(undefVal)) // null
+
 ```
 
 
@@ -50,6 +56,24 @@ console.log(valyou(paramFunc, 8)); // 50
 
 Returns `val` if `val` is NOT a `Function`; otherwise, returns the result of
 calling `val(...args)` using the context of `valyou` as the context of `val`.
+
+- **val** `*`
+
+  The value to be returned or the function to be called.
+
+- **...args** `*`
+
+  Arguments to be passed to `val` if `val` is a function.
+
+
+<br/>
+
+
+### valyouNull(val, *[...args]*)
+
+Returns `val` if `val` is NOT a `Function`; otherwise, returns the result of
+calling `val(...args)` using the context of `valyouNull` as the context of `val`.
+**If `val` is `undefined`, then `null` will be returned.**
 
 - **val** `*`
 

@@ -1,3 +1,9 @@
+# 1.2.0
+
+- Added `valyouNull` function
+
+
+
 # 1.1.0
 
 - Added ES6 version (for tree shaking and future ES6 compatibility).

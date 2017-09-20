@@ -26,16 +26,19 @@
     module.exports = factory();
     return;
   }
-  root.valyou = factory();
+  var exported    = factory();
+  root.valyou     = exported.valyou;
+  root.valyouNull = exported.valyouNull;
 })(this, function() {
   /**
    * @param {*}    val    - The value to be returned or the function to be called.
    * @param {...*} [args] - Arguments to be passed to `val` if `val` is a function.
    *
    * @returns {*} `val` if `val` is NOT a `Function`; otherwise, returns the result of
-   *              calling `val()` (without arguments).
+   *              calling `val(...args)` using the context of `valyou` as the context
+   *              of `val`.
    */
-  return function valyou(val) {
+  function valyou(val) {
     var args;
 
     if (arguments.length > 1) {
@@ -43,6 +46,28 @@
     }
 
     return ((typeof val === 'function') ? val.apply(this, args) : val);
-  };
+  }
+
+
+  /**
+   * @param {*}    val    - The value to be returned or the function to be called.
+   * @param {...*} [args] - Arguments to be passed to `val` if `val` is a function.
+   *
+   * @returns {*} `val` if `val` is NOT a `Function`; otherwise, returns the result of
+   *              calling `val(...args)` using the context of `valyouNull` as the
+   *              context of `val`. If `val` is `undefined`, then `null` will be
+   *              returned.
+   */
+  function valyouNull() {
+    var ret = valyou.apply(this, arguments);
+
+    return ((ret == null) ? null : ret);
+  }
+
+
+  valyou.valyou     = valyou;
+  valyou.valyouNull = valyouNull;
+
+  return valyou;
 });
 
