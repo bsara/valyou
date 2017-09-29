@@ -1,3 +1,9 @@
+# 1.2.1
+
+- Added `jsnext:main` entry to `package.json`
+
+
+
 # 1.2.0
 
 - Added `valyouNull` function
