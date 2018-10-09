@@ -1,3 +1,9 @@
+# 1.2.2
+
+- Optimized package size by only including what is needed in npm package.
+
+
+
 # 1.2.1
 
 - Added `jsnext:main` entry to `package.json`
