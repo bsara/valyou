@@ -1,3 +1,9 @@
+# 1.2.3
+
+- Added "exports" entries to `package.json`.
+- Add type definitions.
+
+
 # 1.2.2
 
 - Optimized package size by only including what is needed in npm package.

@@ -3,7 +3,7 @@
   "version": "1.2.3",
   "description": "Simply returns any value given, unless that value is a function, then that function is called with provided arguments and context.",
   "authors": [
-    "Brandon Sara (http://bsara.pro)"
+    "Brandon Sara (http://bsara.dev)"
   ],
   "license": "ISC",
   "homepage": "https://github.com/bsara/valyou#readme",
@@ -20,11 +20,17 @@
     "getvalue",
     "get-value"
   ],
-  "main": "index.umd.js",
-  "module": "index.js",
-  "jsnext:main": "index.js",
+  "exports": {
+    ".": {
+      "browser": "./index.umd.js",
+      "import": "./index.js",
+      "require": "./index.umd.js",
+      "types": "./index.d.ts"
+    }
+  },
   "files": [
-    "index*.js"
+    "index*.js",
+    "index.d.ts"
   ],
   "scripts": {
     "bump": "npm run bump:patch",

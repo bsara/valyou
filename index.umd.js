@@ -3,7 +3,7 @@
  *
  * ISC License (ISC)
  *
- * Copyright (c) 2017, Brandon D. Sara (https://bsara.pro/)
+ * Copyright (c) 2026, Brandon D. Sara (https://bsara.dev/)
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
